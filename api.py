@@ -1,9 +1,10 @@
 # app.py
 from flask import Flask, request, jsonify
 from openai import OpenAI
+import os
 
 app = Flask(__name__)
-client = OpenAI(api_key="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")  # Replace with your key
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 instructions = """
 You are a compassionate and supportive safety assistant. When a user sends you a message, respond like a trusted friend or counselor who is here to talk and help them feel safe.
